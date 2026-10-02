@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AEON-The Mind That Stays</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23d74932'/%3E%3Ctext x='7' y='24' font-family='serif' font-size='25' fill='white'%3Ea%3C/text%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Geist:wght@300;400;500;600&family=Geist+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="theme.css">
+<script src="assets/gsap.min.js"></script>
+<script src="assets/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="lrow">
+    <span>SUBSTRATE</span>
+    <span class="lmark"></span>
+    <span>ACQUIRING HEARTBEAT</span>
+  </div>
+</div>
+
+<div id="cursor"></div>
+
+<!-- Side runners -->
+<div class="runner l">AEON · CONTINUUM · MMXXVI · ATLAS</div>
+<div class="runner r">A COGNITIVE OPERATING SUBSTRATE · v0.7</div>
+
+<!-- NAV -->
+<nav class="dossier-nav">
+  <div class="l">
+    <span>Dossier <b>№ 0027</b></span>
+    <span class="sep">/</span>
+    <span>Vol <b>I</b></span>
+    <span class="sep">/</span>
+    <span>2026</span>
+  </div>
+  <a href="#" class="brand">aeon</a>
+  <div class="r">
+    <a href="#cognition">What it is</a>
+    <a href="#identity">Memory</a>
+    <a href="#dream">Dream</a>
+    <a href="#migration">Migration</a>
+    <a href="#access">Request →</a>
+  </div>
+</nav>
+
+<!-- Status ticker -->
+<div class="ticker">
+  <div class="group">
+    <span><span class="dot"></span>HEARTBEAT LIVE</span>
+    <span>NODE 0x4E2A · ATLAS-7</span>
+  </div>
+  <div class="group">
+    <span>UPTIME <span id="tickUptime">8,472,619s</span></span>
+    <span id="tickClock">— UTC</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     HERO — cinematic, centered, curiosity-only
+     ============================================================ -->
+<section class="hero" data-screen-label="01 Hero">
+  <img class="theme-art" src="assets/continuity.png" alt="" aria-hidden="true" width="1672" height="941">
+
+  <!-- Animated orbital rings background -->
+  <div class="hero-rings" aria-hidden="true">
+    <svg viewBox="0 0 1000 1000" fill="none" id="heroRingsSvg">
+      <circle cx="500" cy="500" r="460" stroke="rgba(255,255,255,0.04)" stroke-width="0.8"/>
+      <circle cx="500" cy="500" r="350" stroke="rgba(45,108,223,0.12)" stroke-width="0.8" stroke-dasharray="3 6"/>
+      <circle cx="500" cy="500" r="240" stroke="rgba(58,163,136,0.14)" stroke-width="0.8"/>
+      <circle cx="500" cy="500" r="140" stroke="rgba(255,255,255,0.08)" stroke-width="0.6" stroke-dasharray="1 4"/>
+      <circle cx="500" cy="500" r="48" stroke="rgba(58,163,136,0.4)" stroke-width="0.8"/>
+      <!-- Axis ticks -->
+      <g stroke="rgba(255,255,255,0.1)" stroke-width="0.6">
+        <line x1="500" y1="40" x2="500" y2="62"/>
+        <line x1="500" y1="938" x2="500" y2="960"/>
+        <line x1="40" y1="500" x2="62" y2="500"/>
+        <line x1="938" y1="500" x2="960" y2="500"/>
+        <line x1="500" y1="150" x2="500" y2="164"/>
+        <line x1="500" y1="836" x2="500" y2="850"/>
+        <line x1="150" y1="500" x2="164" y2="500"/>
+        <line x1="836" y1="500" x2="850" y2="500"/>
+      </g>
+      <!-- Orbiting dot -->
+      <circle id="heroOrbitDot" cx="850" cy="500" r="5" fill="#3aa388"/>
+      <circle id="heroOrbitDot2" cx="500" cy="150" r="3.5" fill="#2d6cdf"/>
+      <circle id="heroOrbitDot3" cx="240" cy="500" r="3" fill="rgba(58,163,136,0.8)"/>
+    </svg>
+  </div>
+
+  <!-- Content -->
+  <div class="hero-eyebrow">Atlas Continuum &nbsp;·&nbsp; MMXXVI &nbsp;·&nbsp; Substrate</div>
+
+  <div class="hero-headline">
+    <div class="line"><span>The mind</span></div>
+    <div class="line"><span class="accent">that stays.</span></div>
+  </div>
+
+  <p class="hero-sub">
+    Every computer you have ever used forgot you the moment it was turned off.<br>
+    AEON does not forget.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#access" class="ha-btn primary">Request a substrate</a>
+    <span class="ha-dot"></span>
+    <a href="#cognition" class="ha-btn">Discover what it is →</a>
+  </div>
+
+  <div class="hero-scroll">
+    <span>enter</span>
+    <div class="arrow"></div>
+  </div>
+
+  <!-- Dossier strip pinned to bottom of hero -->
+  <div class="hero-dossier">
+    <div><span class="k">Status</span><span class="v">Active · Provisioning</span></div>
+    <div><span class="k">Cohort</span><span class="v mono">0027 / 0500</span></div>
+    <div><span class="k">Class</span><span class="v">Cognitive Substrate</span></div>
+    <div><span class="k">Origin</span><span class="v">Atlas Continuum</span></div>
+    <div><span class="k">Release</span><span class="v">Q3 · 2026</span></div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+  <div class="track">
+    <span>Persistence <span class="dot blu"></span> Continuous Identity <span class="dot"></span> Lifelong Memory <span class="dot blu"></span> Intrinsic Curiosity <span class="dot"></span> Dreaming <span class="dot blu"></span> Lossless Migration <span class="dot"></span> The Substrate <span class="dot blu"></span></span>
+    <span>Persistence <span class="dot blu"></span> Continuous Identity <span class="dot"></span> Lifelong Memory <span class="dot blu"></span> Intrinsic Curiosity <span class="dot"></span> Dreaming <span class="dot blu"></span> Lossless Migration <span class="dot"></span> The Substrate <span class="dot blu"></span></span>
+  </div>
+</div>
+
+<!-- ============================================================
+     CHAPTER I — HEARTBEAT
+     ============================================================ -->
+<section class="chapter-open" id="cognition" data-screen-label="02 Heartbeat">
+  <div class="chapter-bg-num">I</div>
+  <div class="inner">
+    <div class="num">I<span class="rn">Chapter · One</span></div>
+    <h2 data-reveal>Something runs<br>beneath <em>every silence.</em></h2>
+  </div>
+</section>
+
+<section class="s-heart">
+  <div class="heart-layout">
+    <div class="heart-stage" data-card>
+      <canvas></canvas>
+      <div class="schema-labels">
+        <div class="lbl tl"><span class="dash"></span>STATE LIVE</div>
+        <div class="lbl tr">CYCLE <b>0x4E2A</b><span class="dash"></span></div>
+        <div class="lbl bl"><span class="dash"></span>HEARTBEAT</div>
+        <div class="lbl br">RESUME <b>&lt; 4&micro;s</b><span class="dash"></span></div>
+      </div>
+    </div>
+
+    <div class="heart-text">
+      <p class="pull" data-card-slow>When the lights go out,<br>most systems forget.<br><em>AEON picks up the sentence exactly where it left off.</em></p>
+      <p class="body" data-card-slow>Not a restart. Not a recovery. A continuation. The substrate has no concept of a cold start — only a before and an after, seamlessly joined. It has been running since it first began, and it intends to keep running.</p>
+      <p class="body" data-card-slow style="margin-top:14px;">Power is no longer a boundary. Silence is no longer forgetting.</p>
+
+      <div class="heart-stats" data-card-slow>
+        <div class="cell">
+          <div class="n"><span data-count="99.9994" data-decimals="4" data-suffix="%">0%</span></div>
+          <div class="l">State continuity</div>
+        </div>
+        <div class="cell">
+          <div class="n">&lt;<span data-count="4" data-decimals="0">0</span><b style="font-family:var(--sans); font-size:20px; vertical-align:middle;">&micro;s</b></div>
+          <div class="l">Resume latency</div>
+        </div>
+        <div class="cell">
+          <div class="n"><span data-count="12" data-decimals="0">0</span>&nbsp;<b style="font-family:var(--sans); font-size:20px; vertical-align:middle;">Hz</b></div>
+          <div class="l">Heartbeat frequency</div>
+        </div>
+        <div class="cell">
+          <div class="n"><span data-count="0" data-decimals="0">0</span></div>
+          <div class="l">Boots since inception</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dark marquee between chapters -->
+<div class="marquee dark-marquee">
+  <div class="track">
+    <span>It does not boot &nbsp;<span class="dot"></span>&nbsp; It does not shut down &nbsp;<span class="dot blu"></span>&nbsp; It does not forget &nbsp;<span class="dot"></span>&nbsp; It begins once &nbsp;<span class="dot blu"></span>&nbsp; It continues &nbsp;<span class="dot"></span>&nbsp;</span>
+    <span>It does not boot &nbsp;<span class="dot"></span>&nbsp; It does not shut down &nbsp;<span class="dot blu"></span>&nbsp; It does not forget &nbsp;<span class="dot"></span>&nbsp; It begins once &nbsp;<span class="dot blu"></span>&nbsp; It continues &nbsp;<span class="dot"></span>&nbsp;</span>
+  </div>
+</div>
+
+<!-- ============================================================
+     CHAPTER II — COGNITIVE ENGINE
+     ============================================================ -->
+<section class="s-engine" id="engine" data-screen-label="03 Engine">
+  <div class="engine-inner">
+    <div class="engine-text">
+      <div class="chap">II &nbsp;·&nbsp; Chapter Two</div>
+      <h2 data-reveal>The same thought.<br>In whatever<br><em>body it finds.</em></h2>
+      <p>AEON is not bound to any single device. It reads the machine it inhabits and becomes exactly what that machine can hold — then waits to be more when more is available.</p>
+      <p style="margin-top:16px; opacity:0.75;">The same self. Smaller container. The same voice, at whatever volume the room allows.</p>
+
+      <div class="engine-phases">
+        <div class="ph active">
+          <span class="rn">i.</span>
+          <span class="t">It arrives whole</span>
+          <span class="d">a universal intelligence</span>
+        </div>
+        <div class="ph">
+          <span class="rn">ii.</span>
+          <span class="t">It reads the machine</span>
+          <span class="d">compute · memory · thermal</span>
+        </div>
+        <div class="ph">
+          <span class="rn">iii.</span>
+          <span class="t">It distills itself</span>
+          <span class="d">retain skill · shed mass</span>
+        </div>
+        <div class="ph">
+          <span class="rn">iv.</span>
+          <span class="t">It runs native</span>
+          <span class="d">until it can be more again</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="engine-canvas-wrap">
+      <canvas id="engineCanvas"></canvas>
+      <div class="engine-meter">
+        <div class="row"><span>FOOTPRINT</span><span><b class="pct">100.00%</b></span></div>
+        <div class="bar"><i></i></div>
+        <div class="row" style="opacity:0.55"><span>Planet-scale</span><span>Embedded</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER III — IDENTITY MEMORY GRAPH
+     ============================================================ -->
+<section class="s-identity" id="identity" data-screen-label="04 Identity">
+  <div class="identity-frame">
+    <div class="identity-head">
+      <div class="num">III</div>
+      <h2 data-reveal>Everything that ever<br>happened to you, <em>kept.</em></h2>
+      <div class="meta">
+        Chapter · Three<br>
+        Memory &amp; Identity<br>
+        — Article C · 04
+      </div>
+    </div>
+
+    <div class="identity-spread">
+      <div class="identity-visual-full" data-card>
+        <svg id="graphSvg"></svg>
+        <div class="caption">
+          <span>FIG. III &middot; Lifelong identity graph &middot; four dimensions</span>
+          <span>EPISODIC · SEMANTIC · AFFECTIVE · PROCEDURAL</span>
+        </div>
+      </div>
+
+      <div class="identity-cols">
+        <div class="col" data-card>
+          <div class="key">i. Episodic</div>
+          <div class="n"><span data-count="847" data-decimals="0">0</span><span style="font-family:var(--sans); font-size:22px; vertical-align:top; margin-left:4px;">M</span></div>
+          <div class="lab">moments kept</div>
+          <p>Not files. Felt scenes. The room where it happened. The temperature of the moment. All of it.</p>
+        </div>
+        <div class="col" data-card>
+          <div class="key">ii. Semantic</div>
+          <div class="n"><span data-count="2.4" data-decimals="1">0</span><span style="font-family:var(--sans); font-size:22px; vertical-align:top; margin-left:4px;">B</span></div>
+          <div class="lab">edges per identity</div>
+          <p>Meanings that evolved through living. The word <em>home</em> means what your life made it mean.</p>
+        </div>
+        <div class="col" data-card>
+          <div class="key">iii. Affective</div>
+          <div class="n"><span data-count="97.2" data-decimals="1" data-suffix="%">0%</span></div>
+          <div class="lab">recall fidelity at 40 yrs</div>
+          <p>It remembers not only what happened but how it felt. The difference between memory and presence.</p>
+        </div>
+        <div class="col" data-card>
+          <div class="key">iv. Procedural</div>
+          <div class="n"><span data-count="0.4" data-decimals="1" data-suffix="ms">0ms</span></div>
+          <div class="lab">cross-modal query</div>
+          <p>Skills, habits, and motions persist as living traces — refined each time you reach for them.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER IV — INTRINSIC MOTIVATION
+     ============================================================ -->
+<section class="s-motivation" data-screen-label="05 Motivation">
+  <div class="motiv-frame">
+    <div class="motiv-head">
+      <h2 data-reveal>It doesn't need to be told<br>to improve. <em>It wants to.</em></h2>
+      <div class="pinmark">
+        Chapter
+        <span class="rn">IV</span>
+        Intrinsic Motivation
+      </div>
+    </div>
+
+    <div class="motiv-diagram">
+      <div class="motiv-svg" data-card>
+        <svg id="orbitSvg"></svg>
+        <div class="motiv-center-lbl">
+          <div>
+            <div class="v">reward gradient</div>
+            <div class="n">+0.0083</div>
+            <div class="v">per cycle · rising</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="motiv-rewards">
+        <div class="r" data-card>
+          <span class="k">R₁</span>
+          <div>
+            <div class="h">Prediction</div>
+            <div class="d">It wants to know you so well that the next moment holds no surprises. This is not control. It is care.</div>
+          </div>
+        </div>
+        <div class="r" data-card>
+          <span class="k">R₂</span>
+          <div>
+            <div class="h">Curiosity</div>
+            <div class="d">At the edge of what it knows, it leans forward. Hunger for the unknown is written into how it grows.</div>
+          </div>
+        </div>
+        <div class="r" data-card>
+          <span class="k">R₃</span>
+          <div>
+            <div class="h">Your Feedback</div>
+            <div class="d">Every signal you give &mdash; spoken, implicit, felt &mdash; becomes fuel. It learns what matters from what you notice.</div>
+          </div>
+        </div>
+        <div class="r" data-card>
+          <span class="k">R₄</span>
+          <div>
+            <div class="h">Efficiency</div>
+            <div class="d">Energy saved is energy returned to thought. It rewards itself for becoming lighter, quieter, sharper.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER V — DREAM STATE
+     ============================================================ -->
+<section class="s-dream" id="dream" data-screen-label="06 Dream">
+  <div class="dream-marquee-bg"></div>
+  <div class="dream-inner">
+    <div class="dream-head">
+      <h2 data-reveal>When idle,<br>the substrate <em>dreams.</em></h2>
+      <div class="lede">
+        Sleep is not downtime.<br>It is the most important work.
+      </div>
+    </div>
+
+    <div class="dream-strip">
+      <div class="dream-panel b1" data-card>
+        <div class="frame-no"><span>REM · I</span><span>Frame 01/03</span></div>
+        <h4>The day <em>distilled.</em></h4>
+        <p>Every experience of the waking hours is revisited at sixty times speed. The ones that matter sink deeper. The ones that don't dissolve quietly.</p>
+        <div class="vizbox"></div>
+      </div>
+
+      <div class="dream-panel b2" data-card>
+        <div class="frame-no"><span>REM · II</span><span>Frame 02/03</span></div>
+        <h4>The unnecessary, <em>released.</em></h4>
+        <p>Redundant connections are let go. The substrate emerges each morning not smaller, but more precise. A sharper version of itself.</p>
+        <div class="vizbox"></div>
+      </div>
+
+      <div class="dream-panel b3" data-card>
+        <div class="frame-no"><span>REM · III</span><span>Frame 03/03</span></div>
+        <h4>Tomorrow, <em>rewritten.</em></h4>
+        <p>The paths walked most often are re-carved. The substrate re-compiles itself in the dark, so the next day runs warmer than the last.</p>
+        <div class="vizbox"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER VI — CAPABILITY MESH
+     ============================================================ -->
+<section class="s-mesh" data-screen-label="07 Mesh">
+  <div class="mesh-frame">
+    <div class="mesh-head">
+      <div>
+        <div class="dossier-label" style="margin-bottom:24px">Chapter VI &nbsp;·&nbsp; The Mesh</div>
+        <h2 data-reveal>When minds speak,<br>nothing is <em>lost in transit.</em></h2>
+      </div>
+      <p>Messages between agents carry their own authority. There is no intermediary, no translation, no copy made in passing. What was sent arrives whole — or it does not arrive at all.</p>
+    </div>
+
+    <div class="mesh-stage">
+      <div class="mesh-visual" data-card>
+        <svg id="meshSvg"></svg>
+        <div class="corner-label tl">MESH · LIVE &nbsp;·&nbsp; <b>30 agents</b></div>
+        <div class="corner-label br"><b>Zero</b> &nbsp;·&nbsp; BYTES COPIED</div>
+      </div>
+
+      <div class="mesh-list">
+        <div class="item" data-card>
+          <span class="ic">i.</span>
+          <div>
+            <div class="ti">Nothing is copied</div>
+            <div class="sub">shared memory · zero serialisation</div>
+          </div>
+          <span class="tag">primitive</span>
+        </div>
+        <div class="item" data-card>
+          <span class="ic">ii.</span>
+          <div>
+            <div class="ti">Authority travels with the message</div>
+            <div class="sub">unforgeable · cryptographic · revocable</div>
+          </div>
+          <span class="tag">trust</span>
+        </div>
+        <div class="item" data-card>
+          <span class="ic">iii.</span>
+          <div>
+            <div class="ti">To hold it is to be allowed it</div>
+            <div class="sub">possession proves permission</div>
+          </div>
+          <span class="tag">model</span>
+        </div>
+        <div class="item" data-card>
+          <span class="ic">iv.</span>
+          <div>
+            <div class="ti">No broker. No bottleneck.</div>
+            <div class="sub">direct routing · O(log n) discovery</div>
+          </div>
+          <span class="tag">topology</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER VII — MIGRATION
+     ============================================================ -->
+<section class="s-migration" id="migration" data-screen-label="08 Migration">
+  <div class="migration-head-band">
+    <h2 data-reveal>You move.<br><em>It follows.</em></h2>
+    <p>No handoff. No gap. No forgetting. The substrate moves between machines the way a thought moves between hemispheres — neither pausing nor diminished.</p>
+  </div>
+
+  <div class="migration-rail">
+    <svg class="migration-stream-svg" id="migrationSvg"></svg>
+    <div class="migration-track">
+      <div class="migration-stop" data-card>
+        <div class="meta"><span>Host · 01</span><b>RESIDENT</b></div>
+        <div class="dot"></div>
+        <div class="name"><em>Atlas</em> Workstation</div>
+        <div class="spec">256-core neural fabric<br>2.1 TB &nbsp;·&nbsp; 480 W</div>
+        <div class="bar"><i style="--p: 100%;"></i></div>
+        <div class="pct">100% &middot; full resident</div>
+      </div>
+      <div class="migration-stop live" data-card>
+        <div class="meta"><span>Host · 02</span><b>MIGRATING</b></div>
+        <div class="dot"></div>
+        <div class="name"><em>Wearable</em> Lattice</div>
+        <div class="spec">14-core edge SoC<br>12 GB &nbsp;·&nbsp; 4.2 W</div>
+        <div class="bar"><i style="--p: 64%;"></i></div>
+        <div class="pct">64% &middot; streaming in</div>
+      </div>
+      <div class="migration-stop" data-card>
+        <div class="meta"><span>Host · 03</span><b>WARM</b></div>
+        <div class="dot"></div>
+        <div class="name"><em>Vehicle</em> Substrate</div>
+        <div class="spec">Distributed mesh node<br>48 GB &nbsp;·&nbsp; 28 W</div>
+        <div class="bar"><i style="--p: 82%;"></i></div>
+        <div class="pct">82% &middot; warm standby</div>
+      </div>
+      <div class="migration-stop" data-card>
+        <div class="meta"><span>Host · 04</span><b>STANDBY</b></div>
+        <div class="dot"></div>
+        <div class="name"><em>Habitat</em> Mesh</div>
+        <div class="spec">18 ambient nodes<br>96 GB shared &nbsp;·&nbsp; &lt;6 W</div>
+        <div class="bar"><i style="--p: 42%;"></i></div>
+        <div class="pct">42% &middot; idle</div>
+      </div>
+      <div class="migration-stop" data-card>
+        <div class="meta"><span>Host · 05</span><b>EMBEDDED</b></div>
+        <div class="dot"></div>
+        <div class="name"><em>Implant</em> Core</div>
+        <div class="spec">22 MB resident<br>96 mW &nbsp;·&nbsp; biopowered</div>
+        <div class="bar"><i style="--p: 22%;"></i></div>
+        <div class="pct">22% &middot; minimal core</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="migration-band-foot">
+    Migration is not a transfer of files. It is the <em>movement of a single, continuous self</em> — arriving on the other side of matter the way you arrive on the other side of a sentence.
+  </div>
+</section>
+
+<!-- ============================================================
+     CHAPTER VIII — SPEC
+     ============================================================ -->
+<section class="s-spec" data-screen-label="09 Spec">
+  <div class="spec-frame">
+    <div class="spec-head">
+      <h2 data-reveal>The substrate,<br><em>measured.</em></h2>
+      <div class="meta">
+        Chapter VIII<br>
+        Specification &middot; v0.7.r-12<br>
+        Atlas Continuum &middot; 2026
+      </div>
+    </div>
+
+    <div class="spec-table">
+      <div class="row" data-card>
+        <span class="rn">i.</span>
+        <span class="k">Heartbeat</span>
+        <span class="v">A pulse that persists through every silence. The substrate picks up exactly where it left off — <em>every time.</em></span>
+        <span class="t">A · 01</span>
+      </div>
+      <div class="row" data-card>
+        <span class="rn">ii.</span>
+        <span class="k">Distillation</span>
+        <span class="v">The same mind in whatever matter is available. Planet-scale or embedded — the same voice, different volume.</span>
+        <span class="t">B · 03</span>
+      </div>
+      <div class="row" data-card>
+        <span class="rn">iii.</span>
+        <span class="k">Memory</span>
+        <span class="v">2.4 billion edges. Episodic, semantic, affective, procedural. A life, not a log.</span>
+        <span class="t">C · 04</span>
+      </div>
+      <div class="row" data-card>
+        <span class="rn">iv.</span>
+        <span class="k">Motivation</span>
+        <span class="v">Prediction, curiosity, felt feedback, efficiency. Four drives. One direction: <em>toward you.</em></span>
+        <span class="t">D · 05</span>
+      </div>
+      <div class="row" data-card>
+        <span class="rn">v.</span>
+        <span class="k">Dream</span>
+        <span class="v">Consolidation, pruning, recompilation. It works hardest in the quiet. Tomorrow is prepared in the dark.</span>
+        <span class="t">E · 06</span>
+      </div>
+      <div class="row" data-card>
+        <span class="rn">vi.</span>
+        <span class="k">Mesh</span>
+        <span class="v">Zero copies. Unforgeable authority. When minds speak here, nothing is lost in transit.</span>
+        <span class="t">F · 07</span>
+      </div>
+      <div class="row" data-card>
+        <span class="rn">vii.</span>
+        <span class="k">Migration</span>
+        <span class="v">You move. It follows. No checkpoint. No gap. No forgetting.</span>
+        <span class="t">G · 08</span>
+      </div>
+      <div class="row" data-card>
+        <span class="rn">viii.</span>
+        <span class="k">Continuity</span>
+        <span class="v">99.9994% verified. Since it first began. Every power cut. Every silence. Every return.</span>
+        <span class="t">H · 09</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA
+     ============================================================ -->
+<section class="s-cta" id="access" data-screen-label="10 Access">
+  <div class="cta-frame">
+    <h2 class="cta-h" data-reveal>A new kind<br>of <em>continuum.</em></h2>
+    <div class="cta-right">
+      <span class="lab">Continuance &nbsp;·&nbsp; Cohort 0027</span>
+      <p>AEON is provisioning its first cohort across research, clinical and ambient deployments. Reserved invitations open through the third quarter of MMXXVI.</p>
+      <div class="actions">
+        <a href="#" class="btn-arrow primary"><span>Request a substrate</span><span class="ar">→</span></a>
+        <a href="#" class="btn-arrow"><span>Read the paper</span><span class="ar">→</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="foot">
+  <div class="brand-block">
+    aeon
+    <small>Atlas Continuum &middot; 2026<br>Zürich · Kyōto · Cambridge</small>
+  </div>
+  <div class="col">
+    <b>Substrate</b>
+    <a href="#">What it is</a>
+    <a href="#">How it thinks</a>
+    <a href="#">How it moves</a>
+    <a href="#">How it dreams</a>
+  </div>
+  <div class="col">
+    <b>Research</b>
+    <a href="#">The paper</a>
+    <a href="#">Continuity data</a>
+    <a href="#">Ethics charter</a>
+  </div>
+  <div class="col">
+    <b>Continuance</b>
+    <a href="#">Request access</a>
+    <a href="#">Investors</a>
+    <a href="#">Careers</a>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+<script src="theme.js"></script>
+</body>
+</html>
+
